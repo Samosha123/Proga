@@ -1,4 +1,4 @@
-
+#Zad1
 info = {}
 info["фио"] = "Самохин Александр Вадимович"
 info["дата_рождения"]="02 11 2002"
@@ -15,18 +15,18 @@ info["животные"]=kort
 
 ekz={}
 info["ЕГЭ"]=ekz
-ekz["Русский"]="80"
-ekz["Математика"]="75"
-ekz["Физика"]="73"
-ekz["Информатика"]="81"
-ekz["Биология"]="0"
+ekz["Русский"]=80
+ekz["Математика"]=75
+ekz["Физика"]=73
+ekz["Информатика"]=81
+ekz["Биология"]=0
 ekz.pop("Биология")
 
 vuz={}
 info["вузы"]=vuz
-vuz["ВГУИТ"]="220"
-vuz["ВГТУ"]="230"
-vuz["ВГУ"]="260"
+vuz["ВГУИТ"]=220
+vuz["ВГТУ"]=230
+vuz["ВГУ"]=260
 
 print("Данные:",info)
 
@@ -57,23 +57,58 @@ hobbies_count = len(info["хобби"])
 
 print(f'* у меня {hobbies_count} хобби, первое \"{info["хобби"][1]}\"')
 # Количество сданных экзаменов
-print(f'"* после окончания школы сдавал {len(info["ЕГЭ"])} экз."')
+print(f'* после окончания школы сдавал {len(info["ЕГЭ"])} экз."')
 # # Сумма баллов по экзаменам
-print()
-for key,val in ekz.values():
-    
 sum_mark = ekz["Русский"]+ekz["Информатика"]+ekz["Математика"]+ekz["Физика"]
-print(f'"* сумма баллов = {sum_mark}"')
+print(f'* сумма баллов = {sum_mark}"')
 # # Максимальный балл среди сданных
-# max_mark = # Удалите комментарий и допишите код
-# print("* макс. балл = {}".format(# Удалите комментарий и допишите код))
-# # Количество вузов, в которые Вы проходите по баллам
-# # Подсказка: определить, проходите Вы или нет, можно простым сравнением
-# # суммы баллов с проходным баллом вуза - ``True/False``.
-# # Для того, чтобы определить количество таких вузов, преобразуйте
-# # сравнение в целое число (используя ``int()``) и сложите все сравниваемые
-# вузы.
-# vuz_count = # Удалите комментарий и допишите код
-# print("* кол-во вузов в которые прохожу: {}".format(# Удалите комментарий и
-# допишите код))
+msx =[ ekz["Русский"],ekz["Информатика"],ekz["Математика"],ekz["Физика"]]
+max_mark=0
+for i in range(len(msx)):
+    if msx[i]>max_mark:
+        max_mark=msx[i]
+        i+=1
+    else:
+        i+=1
+print(f'* макс. балл = {max_mark}')
+
+sum_mark=sum_mark-ekz["Информатика"]
+vuz_count=0
+vuz_mass=[vuz["ВГУИТ"],vuz["ВГТУ"],vuz["ВГУ"]]
+for i in range(len(vuz)):
+    if sum_mark>=vuz_mass[i]:
+        vuz_count+=1
+    i+=1   
+print(f'* кол-во вузов в которые прохожу: {vuz_count}')
+
+
+#Zad2 (1var)
+from collections import OrderedDict
+dct = OrderedDict({1: 1, 2: 2, 3: 3, 4: 4, 5: 5})
+dct.move_to_end(1,last=True)
+dct.move_to_end(5,last=False)
+dct.pop(2)
+dct[6]=6
+print(dct)
+
+#Zad3
+strk="159538259823275"
+slov={}
+for i in strk:
+    if (i in slov):
+        slov[i]+=1
+    else:
+        slov[i]=1
+print(slov) 
+sorted_slov={}
+sorted_keys = sorted(slov, key=slov.get,reverse=True)  
+j=0
+for i in sorted_keys:
+    if j < 3:
+        sorted_slov[i] = slov[i]   
+        j+=1
+    else:
+        break
+print(sorted_slov) 
+
 
