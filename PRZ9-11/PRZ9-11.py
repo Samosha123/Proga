@@ -24,12 +24,12 @@ def z1_3(m_birth,y_birth):
         y_count-=1
     return y_count
 #1.4
-def z1_4 (x,y):
-    if x < 0 and y <0:
+def z1_4 (x1_4,y1_4):
+    if x1_4 < 0 and y1_4 <0:
         q_num = 3
-    elif x < 0 and y >0: 
+    elif x1_4 < 0 and y1_4 >0: 
         q_num = 2
-    elif x > 0 and y > 0:
+    elif x1_4 > 0 and y1_4 > 0:
         q_num = 1
     else:
         q_num = 43
@@ -90,42 +90,41 @@ print("№1.2")
 print(z1_2(31,15))
 
 print("№1.3")
+print("Введите день рождения: ")
+m_birth = int (input())
+print("Введите год рождения: ")
+y_birth = int (input())
+print("Возраст человека: ", z1_3(m_birth,y_birth))
 
-y_b = int(input("Введите год рождения: "))
-m_b = int(input("Введите месяц рождения: "))
+print("#1.4")
+print("Введите координаты x и y: ")
+x1_4 = int(input())
+y1_4 = int(input())
+print("Номер координатной четверти: ", z1_4(x1_4, y1_4))
 
-print("Возраст человека: ", get_years_at_birthday(y_b, m_b))
+# print("---------- Задание 2.1 ----------")
 
-print("---------- Задание 1.4 ----------")
+# numbers_2_1 = list(map(int, input("Введите последовательность чисел через пробел: ").split()))
 
-x_1_4 = float(input("Введите x координаты: "))
-y_1_4 = float(input("Введите y координаты: "))
+# result_2_1 = get_sum_and_col_in_list_numbers(numbers_2_1)
 
-print("Номер четверти координатной плоскости для x =", x_1_4, "y =", y_1_4, ":", search_coord_position(x_1_4, y_1_4))
+# print("Сумма чисел:", result_2_1[0], "| Количество введенных чисел:", result_2_1[1])
 
-print("---------- Задание 2.1 ----------")
+# print("---------- Задание 2.2 ----------")
 
-numbers_2_1 = list(map(int, input("Введите последовательность чисел через пробел: ").split()))
+# number_2_2 = int(input("Введите число: "))
 
-result_2_1 = get_sum_and_col_in_list_numbers(numbers_2_1)
+# print("Последовательность x5 чисел меньше введенного числа:", get_x_5_numbers_at_n(number_2_2))
 
-print("Сумма чисел:", result_2_1[0], "| Количество введенных чисел:", result_2_1[1])
+# print("---------- Задание 2.3 ----------")
 
-print("---------- Задание 2.2 ----------")
+# number_2_3 = float(input("Введите вещественное число: "))
 
-number_2_2 = int(input("Введите число: "))
+# print("Наименьшее натуральное n:", get_min_in_sum_range(number_2_3))
 
-print("Последовательность x5 чисел меньше введенного числа:", get_x_5_numbers_at_n(number_2_2))
+# print("---------- Задание 2.4 ----------")
 
-print("---------- Задание 2.3 ----------")
+# number_2_4 = int(input("Введите натуральное число: "))
+# result_2_4 = get_sum_and_length_of_number(number_2_4)
 
-number_2_3 = float(input("Введите вещественное число: "))
-
-print("Наименьшее натуральное n:", get_min_in_sum_range(number_2_3))
-
-print("---------- Задание 2.4 ----------")
-
-number_2_4 = int(input("Введите натуральное число: "))
-result_2_4 = get_sum_and_length_of_number(number_2_4)
-
-print("Сумма цифр:", result_2_4[0], "| Количество цифр:", result_2_4[1])
+# print("Сумма цифр:", result_2_4[0], "| Количество цифр:", result_2_4[1])
