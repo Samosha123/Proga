@@ -32,7 +32,7 @@ def z1_4 (x1_4,y1_4):
     elif x1_4 > 0 and y1_4 > 0:
         q_num = 1
     else:
-        q_num = 43
+        q_num = 4
     return q_num
 
 #Zad2
@@ -51,14 +51,12 @@ def z2_1():
     return (sum_n,count)
 #2.2
 def z2_2(x):
-    x = 61
     a = 0
     while x >= a:
         print(a)
         a+=5
 #2.3
 def z2_3 (a):
-    a = float(input())
     sum = 0.0
     n = 0
     while sum <= a:
@@ -68,18 +66,23 @@ def z2_3 (a):
 #2.4
 def z2_4 (x):
     sum = 0
+    count = 0
     while x % 10 != 0:
         sum = sum + x % 10
         x = int(x / 10)
-    return sum
+        count+=1
+    return sum,count
 #2.5
 def z2_5(k, s, start):
     res_num= []
+    count = 0
 
-    for i in range(start, 11):
+    for i in range(start, 1000):
         if int(str(i)[-1]) == k and i % s == 0:
             res_num.append(i)
-
+            count+=1
+        if count == 10:
+            break
     return res_num
 
 
@@ -102,29 +105,24 @@ x1_4 = int(input())
 y1_4 = int(input())
 print("Номер координатной четверти: ", z1_4(x1_4, y1_4))
 
-# print("---------- Задание 2.1 ----------")
+print("№2.1")
+print("Че то он мне не то выводит")
+print(z2_1())
 
-# numbers_2_1 = list(map(int, input("Введите последовательность чисел через пробел: ").split()))
+print("№2.2")
+print("Последовательность чисел кратных 5: ")
+print(z2_2(61))
 
-# result_2_1 = get_sum_and_col_in_list_numbers(numbers_2_1)
+print("№2.3")
+print("Введите вещественное число:")
+a = float(input())
+print("Наименьшее натууральное n: ")
+print(z2_3(a))
 
-# print("Сумма чисел:", result_2_1[0], "| Количество введенных чисел:", result_2_1[1])
+print("№2.4")
+print("Введите натуральное чилсло: ")
+x = int(input())
+print("Сумма и количесвто чисел: ",z2_4(x))
 
-# print("---------- Задание 2.2 ----------")
-
-# number_2_2 = int(input("Введите число: "))
-
-# print("Последовательность x5 чисел меньше введенного числа:", get_x_5_numbers_at_n(number_2_2))
-
-# print("---------- Задание 2.3 ----------")
-
-# number_2_3 = float(input("Введите вещественное число: "))
-
-# print("Наименьшее натуральное n:", get_min_in_sum_range(number_2_3))
-
-# print("---------- Задание 2.4 ----------")
-
-# number_2_4 = int(input("Введите натуральное число: "))
-# result_2_4 = get_sum_and_length_of_number(number_2_4)
-
-# print("Сумма цифр:", result_2_4[0], "| Количество цифр:", result_2_4[1])
+print("№2.5")
+print(z2_5(4,2,6))
