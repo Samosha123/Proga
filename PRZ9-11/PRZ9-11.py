@@ -1,12 +1,12 @@
-#Zad1
-#1.1
+# #Zad1
+# #1.1
 def z1_1(x):
     if x >=0:
         f= x**(1/2)+x**2
     else:
         f = 1/x
     return f
-#1.2
+# #1.2
 def z1_2 (a,b):
     if a > b:
         max = a
@@ -15,7 +15,7 @@ def z1_2 (a,b):
         max = b
         min = a
     return max,min
-#1.3
+# #1.3
 def z1_3(m_birth,y_birth):
     m_today = 11
     y_today = 2021
@@ -23,7 +23,7 @@ def z1_3(m_birth,y_birth):
     if m_today > m_birth:
         y_count-=1
     return y_count
-#1.4
+# #1.4
 def z1_4 (x1_4,y1_4):
     if x1_4 < 0 and y1_4 <0:
         q_num = 3
@@ -35,8 +35,8 @@ def z1_4 (x1_4,y1_4):
         q_num = 4
     return q_num
 
-#Zad2
-#2.1
+# #Zad2
+# #2.1
 def z2_1():
     n = 0
     sum_n = 0
@@ -49,13 +49,13 @@ def z2_1():
             sum_n += a
             count += 1
     return (sum_n,count)
-#2.2
+# #2.2
 def z2_2(x):
     a = 0
     while x >= a:
         print(a)
         a+=5
-#2.3
+# #2.3
 def z2_3 (a):
     sum = 0.0
     n = 0
@@ -63,7 +63,7 @@ def z2_3 (a):
         n += 1
         sum += 1/n
     return (n)
-#2.4
+# #2.4
 def z2_4 (x):
     sum = 0
     count = 0
@@ -72,7 +72,7 @@ def z2_4 (x):
         x = int(x / 10)
         count+=1
     return sum,count
-#2.5
+# #2.5
 def z2_5(k, s, start):
     res_num= []
     count = 0
@@ -84,6 +84,43 @@ def z2_5(k, s, start):
         if count == 10:
             break
     return res_num
+#3.2
+def z3_2(a,b):
+    ran = b - a
+    sum = 0
+    proz = 1
+    arif = 0
+    geom = 0
+    for i in range (a,b+1):
+        sum+=i
+        proz*=i
+        arif = sum / (ran + 1)
+        geom = proz**(ran + 1)
+    return sum, proz,arif, geom
+#3.3
+def z3_3(s,p):
+    p = p / 100
+    sum = 0
+    temp = 0
+    for i in range (2,10):
+        temp = s * p
+        s+=temp
+        sum+= s
+        print("За", i , "день лыжник преодолел: ", s)
+    print("Суммарная дистаниця: ")
+    return sum
+#3.4
+def z3_4(p):
+    mass_gruz = [2,5,1,10,9]
+    sum = 0
+    for i in range (0,len(mass_gruz)):
+        sum+= mass_gruz[i]
+    if sum<=p:
+        print("Перевозка возможна")
+    else:
+        print("Перевозка не возможна")
+    return
+
 
 
 print("№1.1")
@@ -126,3 +163,15 @@ print("Сумма и количесвто чисел: ",z2_4(x))
 
 print("№2.5")
 print(z2_5(4,2,6))
+
+print("№3.2")
+print("Введите числа a и b: ")
+a = int(input())
+b = int(input())
+print(z3_2(a,b))
+
+print("№3.3")
+print(z3_3(2,50))
+
+print("№3.4")
+print(z3_4(10))
