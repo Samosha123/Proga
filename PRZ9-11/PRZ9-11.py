@@ -120,58 +120,108 @@ def z3_4(p):
     else:
         print("Перевозка не возможна")
     return
+#5.1
+def z5_1(a,b,c):
+    mass = []
+    for i in range (a,b):
+        if i%c==0:
+            mass.append(i)
+    return mass
+#5.2
+import math
+def z5_2(n):
+    mass = []
+    for i in range (100,999):
+        count_num = 10**(len(str(i))-1)
+        mass.append(math.floor(i / count_num))
+        count_num/=10
+        for i in range(0,(len(str(count_num))-2)):
+            temp = math.floor(i / count_num)
+            mass.append(temp % 10)
+            count_num/=10
+        sum = 0
+        for i in mass:
+            sum = sum + i
+        if sum == n:
+            print(mass)
+        mass.clear
+    
+
+# print(z5_2(15))
 
 
+# print("№1.1")
+# print(z1_1(4))
 
-print("№1.1")
-print(z1_1(4))
+# print("№1.2")
+# print(z1_2(31,15))
 
-print("№1.2")
-print(z1_2(31,15))
+# print("№1.3")
+# print("Введите день рождения: ")
+# m_birth = int (input())
+# print("Введите год рождения: ")
+# y_birth = int (input())
+# print("Возраст человека: ", z1_3(m_birth,y_birth))
 
-print("№1.3")
-print("Введите день рождения: ")
-m_birth = int (input())
-print("Введите год рождения: ")
-y_birth = int (input())
-print("Возраст человека: ", z1_3(m_birth,y_birth))
+# print("#1.4")
+# print("Введите координаты x и y: ")
+# x1_4 = int(input())
+# y1_4 = int(input())
+# print("Номер координатной четверти: ", z1_4(x1_4, y1_4))
 
-print("#1.4")
-print("Введите координаты x и y: ")
-x1_4 = int(input())
-y1_4 = int(input())
-print("Номер координатной четверти: ", z1_4(x1_4, y1_4))
+# print("№2.1")
+# print("Че то он мне не то выводит")
+# print(z2_1())
 
-print("№2.1")
-print("Че то он мне не то выводит")
-print(z2_1())
+# print("№2.2")
+# print("Последовательность чисел кратных 5: ")
+# print(z2_2(61))
 
-print("№2.2")
-print("Последовательность чисел кратных 5: ")
-print(z2_2(61))
+# print("№2.3")
+# print("Введите вещественное число:")
+# a = float(input())
+# print("Наименьшее натууральное n: ")
+# print(z2_3(a))
 
-print("№2.3")
-print("Введите вещественное число:")
-a = float(input())
-print("Наименьшее натууральное n: ")
-print(z2_3(a))
+# print("№2.4")
+# print("Введите натуральное чилсло: ")
+# x = int(input())
+# print("Сумма и количесвто чисел: ",z2_4(x))
 
-print("№2.4")
-print("Введите натуральное чилсло: ")
-x = int(input())
-print("Сумма и количесвто чисел: ",z2_4(x))
+# print("№2.5")
+# print(z2_5(4,2,6))
 
-print("№2.5")
-print(z2_5(4,2,6))
+# print("№3.2")
+# print("Введите числа a и b: ")
+# a = int(input())
+# b = int(input())
+# print(z3_2(a,b))
 
-print("№3.2")
-print("Введите числа a и b: ")
-a = int(input())
-b = int(input())
-print(z3_2(a,b))
+# print("№3.3")
+# print(z3_3(2,50))
 
-print("№3.3")
-print(z3_3(2,50))
+# print("№3.4")
+# print(z3_4(10))
 
-print("№3.4")
-print(z3_4(10))
+# print("№5.1")
+# a = int(input())
+# b = int(input())
+# print(z5_1(a,b,2))
+
+
+mass = []
+for i in range (100,999):
+    count_num = 10**(len(str(i))-1)
+    mass.append(math.floor(i / count_num))
+    count_num/=10
+    for j in range(0,(len(str(count_num))-2)):
+        temp = math.floor(i / count_num)
+        mass.append(temp % 10)
+        count_num/=10
+    sum = 0
+    for g in mass:
+        sum = sum + g
+    if sum == 10:
+        print(mass)
+    mass.clear
+
