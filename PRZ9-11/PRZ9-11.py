@@ -132,23 +132,33 @@ import math
 def z5_2(n):
     mass = []
     for i in range (100,999):
-        count_num = 10**(len(str(i))-1)
-        mass.append(math.floor(i / count_num))
-        count_num/=10
-        for i in range(0,(len(str(count_num))-2)):
-            temp = math.floor(i / count_num)
+        countNum = len(str(i)) - 1
+        divider = 10**countNum
+        for g in range(0,countNum + 1):
+            temp = math.floor(i / divider)
             mass.append(temp % 10)
-            count_num/=10
+            divider /= 10
         sum = 0
-        for i in mass:
-            sum = sum + i
+        for j in mass:
+            sum = sum + j
         if sum == n:
             print(mass)
-        mass.clear
-    
-
-# print(z5_2(15))
-
+        mass.clear()
+#5.3
+def z5_3():
+    klass = [-184,175,191,-194,-181,180,-199,150,-178,-190,178] 
+    sum_m = sum_f = count_m = count_f = 0
+    for i in klass:
+        if i < 0:
+            i = i*(-1)
+            sum_m+=i
+            count_m+=1
+        else:
+            sum_f+=i
+            count_f+=1
+    sr_m= sum_m/count_m
+    sr_f = sum_f / count_f
+    return round(sr_m,1), round(sr_f,1)
 
 # print("№1.1")
 # print(z1_1(4))
@@ -208,20 +218,9 @@ def z5_2(n):
 # b = int(input())
 # print(z5_1(a,b,2))
 
+# print("№5.2")
+# print(z5_2(15))
 
-mass = []
-for i in range (100,999):
-    count_num = 10**(len(str(i))-1)
-    mass.append(math.floor(i / count_num))
-    count_num/=10
-    for j in range(0,(len(str(count_num))-2)):
-        temp = math.floor(i / count_num)
-        mass.append(temp % 10)
-        count_num/=10
-    sum = 0
-    for g in mass:
-        sum = sum + g
-    if sum == 10:
-        print(mass)
-    mass.clear
-
+print("№5.3")
+sr_m, sr_f = z5_3()
+print(f'Средний рост мальчиков {sr_m}, срединий рост девочек {sr_f}')
